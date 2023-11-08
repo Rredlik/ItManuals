@@ -8,6 +8,7 @@
   - [CrystalDiskInfo](https://github.com/hiyohiyo/CrystalDiskInfo)
   - [Windows 10 context menu](https://www.sordum.org/14479/windows-11-classic-context-menu-v1-1/)
   - [Driver Store Explorer](https://github.com/lostindark/DriverStoreExplorer)
+  - [DriverPack-Solution](https://github.com/DriverPackSolution/DriverPack-Solution)
   - [Bulk Crap Uninstaller](https://github.com/Klocman/Bulk-Crap-Uninstaller)
   - [Adobe-GenP](https://github.com/cw2k/Adobe-GenP)
 --------
