@@ -1,4 +1,4 @@
-# Application
+# Apps
 - [**Linux**](Linux.md)
 - [**MacOS**](MacOs.md)
 - [**Windows**](Windows.md)
