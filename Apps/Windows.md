@@ -10,7 +10,6 @@
   - [Driver Store Explorer](https://github.com/lostindark/DriverStoreExplorer)
   - [Bulk Crap Uninstaller](https://github.com/Klocman/Bulk-Crap-Uninstaller)
   - [Adobe-GenP](https://github.com/cw2k/Adobe-GenP)
-  - 
 --------
   - [Drivers](https://github.com/tinygo-org/drivers)
 --------
