@@ -31,3 +31,5 @@ source venv/bin/activate
 source my_env/bin/activate && python3 run.py
 ```
 Для выхода из среды введите команду deactivate (ctrl+C)
+
+[Запуск скрипта без блокировки консоли](../../../deploy.md)
