@@ -97,7 +97,14 @@ DELETE FROM users WHERE user_name = 'slide';
 
 
 ## Удаленное подключение к БД
-В файле postgresql.conf на строке 60 раскомментировать и заменить на listen_addresses='localhost' на listen_addresses='*'
+В файле postgresql.conf на строке 60 раскомментировать и заменить:
+```
+listen_addresses='localhost'
+```
+на 
+```
+listen_addresses='*'
+```
 ```bash
 vi /etc/postgresql/16/main/postgresql.conf
 ```
