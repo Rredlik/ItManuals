@@ -73,7 +73,6 @@ psql -d lumpics
 
 
 
-
 ## Создание таблицы и работа со строками
 ```bash
 CREATE TABLE users (user_id serial PRIMARY KEY, 
@@ -95,9 +94,12 @@ DELETE FROM users WHERE user_name = 'slide';
 
 
 
-
 ## Удаленное подключение к БД
-В файле postgresql.conf на строке 60 раскомментировать и заменить:
+В файле postgresql.conf 
+```bash
+vi /etc/postgresql/16/main/postgresql.conf
+```
+На строке 60 раскомментировать и заменить:
 ```
 listen_addresses='localhost'
 ```
@@ -105,10 +107,11 @@ listen_addresses='localhost'
 ```
 listen_addresses='*'
 ```
+
+Редактирование конфигурации в файле pg_hba.conf
 ```bash
-vi /etc/postgresql/16/main/postgresql.conf
+vi /etc/postgresql/16/main/pg_hba.conf
 ```
-Редактирование конфигурации в файле pg_hba.conf<br>
 125 строка
 ``` 
 IPv4 local connections:
@@ -119,17 +122,10 @@ host    all             all             127.0.0.1/32            md5
 IPv4 local connections:
 host    all             all             all                     md5
 ```
-Команда для открытия файла
-```bash
-vi /etc/postgresql/16/main/pg_hba.conf
-```
-
 Перезапуск службы:
 ```bash
 systemctl restart postgresql
 ```
-
-
 
 
 
