@@ -77,7 +77,7 @@ INSERT INTO users (user_name, user_mail) VALUES ('tester', 'test@mail.ru');
 
 SELECT * FROM users;
 
-DELETE FROM users WHERE type = 'slide';
+DELETE FROM users WHERE user_name = 'slide';
 ```
 Вывести таблицы на экран
 ```bash
