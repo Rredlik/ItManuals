@@ -52,6 +52,10 @@ psql
 ```bash
 createuser --interactive
 ```
+Изменить пароль созданного пользователя
+```bash
+ALTER USER user_name WITH PASSWORD 'new_password';
+```
 Базу данных лучше назвать таким же именем, как была названа учетная запись. Пример, lumpics — имя пользователя
 ```bash
 createdb lumpics
