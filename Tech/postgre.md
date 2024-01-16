@@ -155,4 +155,38 @@ sudo service apache2 restart
 ```
 Адрес для подключения (server-ip — это IP адрес вашего сервера): http://server-ip/phppgadmin
 
+### При возникновении ошибки:
+>Version of PostgreSQL not supported. Please upgrade to version or later.
 
+Необходимо открыть файл:
+```bash
+vi /usr/share/phppgadmin/classes/database/Connection.php
+```
+Заменить секцию
+``` 
+// Detect version and choose appropriate database driver
+        switch (substr($version,0,2)) {
+            case '14': return 'Postgres';break;
+            case '13': return 'Postgres13';break;
+            case '12': return 'Postgres12';break;
+            case '11': return 'Postgres11';break;
+            case '10': return 'Postgres10';break;
+        }  
+```
+Добавить используемую версию
+``` 
+// Detect version and choose appropriate database driver
+        switch (substr($version,0,2)) {
+            case '16': return 'Postgres';break;
+            case '15': return 'Postgres15';break;
+            case '14': return 'Postgres14';break;
+            case '13': return 'Postgres13';break;
+            case '12': return 'Postgres12';break;
+            case '11': return 'Postgres11';break;
+            case '10': return 'Postgres10';break;
+        }
+```
+Перезапустить Apache
+```bash
+systemctl restart apache2
+```
