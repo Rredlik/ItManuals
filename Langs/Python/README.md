@@ -28,7 +28,7 @@ source my_venv/bin/activate
 ```
 Установка пакетов в окружении из файла requirements.py:
 ```bash
-source my_venv/bin/activate
+pip install -r requirements.py
 ```
 Запуск окружения и скрипта одной командой:
 ```bash
