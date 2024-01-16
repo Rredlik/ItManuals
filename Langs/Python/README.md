@@ -26,9 +26,9 @@ python3 -m venv my_venv
 ```bash
 source my_venv/bin/activate
 ```
-Установка пакетов в окружении из файла requirements.py:
+Установка пакетов в окружении из файла requirements.txt:
 ```bash
-pip install -r requirements.py
+pip install -r requirements.txt
 ```
 Запуск окружения и скрипта одной командой:
 ```bash
