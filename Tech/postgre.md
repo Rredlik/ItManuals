@@ -34,3 +34,32 @@ psql
 ```bash
 \q
 ```
+## Создание пользователя и базы данных
+Находясь в консоли под управлением профиля postgres
+```bash
+createuser --interactive
+```
+Базу данных лучше назвать таким же именем, как была названа учетная запись. Пример, lumpics — имя пользователя
+```bash
+createdb lumpics
+```
+Переход к работе с указанной базой данных 
+```bash
+psql -d lumpics
+```
+
+## Создание таблицы и работа со строками
+```bash
+CREATE TABLE users (user_id serial PRIMARY KEY, 
+user_name varchar (20), 
+user_mail varchar (30), 
+registration_date timestamp default current_timestamp
+);
+```
+Вывести таблицу на экран
+```bash
+\d
+```
+```bash
+INSERT INTO users (user_name, user_mail) VALUES ('tester', 'test@mail.ru');
+```
