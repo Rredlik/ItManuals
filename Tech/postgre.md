@@ -14,7 +14,20 @@ sudo apt-get update
 ```
 Получение последней доступной версии PostgreSQL из официального репозитория
 ```bash
-sudo apt-get install postgresql postgresql-contrib
+sudo apt-get install postgresql postgresql-contrib -y
+```
+##
+По умолчанию служба Postgres не настроена на автоматический запуск после перезагрузки системы. Включить автоматический запуск службы 
+```bash
+sudo systemctl enable postgresql.service
+```
+Проверить состояние PostgreSQL
+```bash
+sudo systemctl status postgresql.service
+```
+Если служба не запущена, запускаем
+```bash
+sudo systemctl start postgresql.service
 ```
 
 ## Первый запуск PostgreSQL
