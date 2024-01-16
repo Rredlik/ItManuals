@@ -1,5 +1,5 @@
 # Ссылки
-[Открыть доступ к TCP/ip](#tcp)
+[Открыть доступ к TCP/IP](#tcp)
 
 # Установка PostgreSQL
 Отметим пользовательские хранилища, поскольку туда обычно в первую очередь выгружают самые свежие версии.
@@ -32,6 +32,8 @@ sudo systemctl status postgresql.service
 ```bash
 sudo systemctl start postgresql.service
 ```
+
+
 
 ## Первый запуск PostgreSQL
 Управлению от лица созданной по умолчанию учетной записи
@@ -68,6 +70,9 @@ createdb lumpics
 psql -d lumpics
 ```
 
+
+
+
 ## Создание таблицы и работа со строками
 ```bash
 CREATE TABLE users (user_id serial PRIMARY KEY, 
@@ -86,7 +91,11 @@ DELETE FROM users WHERE user_name = 'slide';
 ```bash
 \d
 ```
-## <a id='#tcp'>Удаленное подключение к БД</a>
+
+
+
+
+## <a id="#tcp">Удаленное подключение к БД</a>
 В файле postgresql.conf на строке 60 раскомментировать и заменить на listen_addresses='localhost' на listen_addresses='*'
 ```bash
 vi /etc/postgresql/16/main/postgresql.conf
@@ -102,6 +111,10 @@ vi /etc/postgresql/16/main/pg_hba.conf
 ```bash
 systemctl restart postgresql
 ```
+
+
+
+
 
 
 # Дополнительное
