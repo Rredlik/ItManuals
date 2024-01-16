@@ -55,11 +55,43 @@ user_name varchar (20),
 user_mail varchar (30), 
 registration_date timestamp default current_timestamp
 );
+
+INSERT INTO users (user_name, user_mail) VALUES ('tester', 'test@mail.ru');
+
+SELECT * FROM test;
+
+DELETE FROM test WHERE type = 'slide';
 ```
-Вывести таблицу на экран
+Вывести таблицы на экран
 ```bash
 \d
 ```
+
+## Установка phpPgAdmin
 ```bash
-INSERT INTO users (user_name, user_mail) VALUES ('tester', 'test@mail.ru');
+sudo apt-get update
+sudo apt-get install apache2
 ```
+Проверка работоспособности и корректности синтаксиса
+```bash
+sudo apache2ctl configtest
+```
+Запуск сервера
+```bash
+sudo systemctl start apache2
+```
+Загрузка phpPgAdmin
+```bash
+sudo apt install phppgadmin
+```
+Следует немного изменить конфигурационный файл
+```bash
+vi /etc/apache2/conf-available/phppgadmin.conf
+```
+Перед строкой «Require local» поставьте #, чтобы переделать ее в комментарий, а снизу введите Allow From all. После этого перезапустить веб-сервер
+```bash
+sudo service apache2 restart
+```
+Адрес для подключения (server-ip — это IP адрес вашего сервера): http://server-ip/phppgadmin
+
+
