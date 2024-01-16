@@ -75,9 +75,9 @@ registration_date timestamp default current_timestamp
 
 INSERT INTO users (user_name, user_mail) VALUES ('tester', 'test@mail.ru');
 
-SELECT * FROM test;
+SELECT * FROM users;
 
-DELETE FROM test WHERE type = 'slide';
+DELETE FROM users WHERE type = 'slide';
 ```
 Вывести таблицы на экран
 ```bash
