@@ -20,11 +20,15 @@ sudo apt install -y python3-venv
 ```
 Создание виртуального окружения:
 ```bash
-python3 -m venv venv
+python3 -m venv my_venv
 ```
 Запуск окружения:
 ```bash
-source venv/bin/activate
+source my_venv/bin/activate
+```
+Установка пакетов в окружении из файла requirements.py:
+```bash
+source my_venv/bin/activate
 ```
 Запуск окружения и скрипта одной командой:
 ```bash
