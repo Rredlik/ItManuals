@@ -1,3 +1,6 @@
+# Ссылки
+[Открыть доступ к TCP/ip](#tcp)
+
 # Установка PostgreSQL
 Отметим пользовательские хранилища, поскольку туда обычно в первую очередь выгружают самые свежие версии.
 ```bash
@@ -83,14 +86,14 @@ DELETE FROM users WHERE user_name = 'slide';
 ```bash
 \d
 ```
-## Удаленное подключение к БД
+## <a id='#tcp'>Удаленное подключение к БД</a>
 В файле postgresql.conf на строке 60 раскомментировать и заменить на listen_addresses='localhost' на listen_addresses='*'
 ```bash
 vi /etc/postgresql/16/main/postgresql.conf
 ```
 Редактирование конфигурации в файле pg_hba.conf, 125 строка заменить 
-IPv4 local connections:
-host    all             all             all                     md5
+`IPv4 local connections:<br>
+host    all             all             all                     md5`
 ```bash
 vi /etc/postgresql/16/main/pg_hba.conf
 ```
