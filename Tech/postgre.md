@@ -89,7 +89,7 @@ DELETE FROM users WHERE user_name = 'slide';
 vi /etc/postgresql/16/main/postgresql.conf
 ```
 Редактирование конфигурации в файле pg_hba.conf, 125 строка заменить 
-# IPv4 local connections:
+IPv4 local connections:
 host    all             all             all                     md5
 ```bash
 vi /etc/postgresql/16/main/pg_hba.conf
