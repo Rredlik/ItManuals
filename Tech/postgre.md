@@ -83,7 +83,25 @@ DELETE FROM users WHERE user_name = 'slide';
 ```bash
 \d
 ```
+## Удаленное подключение к БД
+В файле postgresql.conf на строке 60 раскомментировать и заменить на listen_addresses='localhost' на listen_addresses='*'
+```bash
+vi /etc/postgresql/16/main/postgresql.conf
+```
+Редактирование конфигурации в файле pg_hba.conf, 125 строка заменить 
+# IPv4 local connections:
+host    all             all             all                     md5
+```bash
+vi /etc/postgresql/16/main/pg_hba.conf
+```
 
+Перезапуск службы:
+```bash
+systemctl restart postgresql
+```
+
+
+# Дополнительное
 ## Установка phpPgAdmin
 ```bash
 sudo apt-get update
