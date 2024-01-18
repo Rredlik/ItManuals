@@ -8,7 +8,7 @@ All actions are suitable only for Os Linux and was tested on Debian, Ubuntu
 
 ## Project setup
 1. ```cd path/to/project/directory```
-2. [Create virtual venv](../../../Langs/Python/README.md)
+2. [Create virtual venv](README.md)
 3. ```pip install -r requirements.txt```
 
 
@@ -22,8 +22,8 @@ They are usually loaded when the system boots.
     sudo touch your-service-name.service
     ```
 2. Edit Linux Service  
-   [insert this template](Templates/Bot.service)
+   [insert this template](../../Os/Linux/Deploy/Templates/Bot.service)
     ```bash
    sudo nano your-service-name.service
    ```
-3. [Setup service (1-2)](../System/Systemd.md)
+3. [Setup service (1-2)](../../Os/Linux/System/Systemd.md)
