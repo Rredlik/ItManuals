@@ -52,6 +52,10 @@ sudo supervisorctl stop TgBot
 ```bash
 sudo supervisorctl start TgBot
 ```
+Перезапустить процесс:
+```bash
+sudo supervisorctl restart TgBot
+```
 Кроме того, можно подключится к процессу и посмотреть что он выводит в stdout/stderr с помощью команды fg:
 ```bash
 sudo supervisorctl fg TgBot
