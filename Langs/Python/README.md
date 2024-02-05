@@ -32,7 +32,7 @@ pip install -r requirements.txt
 ```
 Запуск окружения и скрипта одной командой:
 ```bash
-source my_env/bin/activate && python3 run.py
+source my_venv/bin/activate && python3 run.py
 ```
 Для выхода из среды введите команду deactivate (ctrl+C)
 
