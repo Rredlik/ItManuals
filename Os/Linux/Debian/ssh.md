@@ -1,4 +1,4 @@
-# Ssh setup
+# SSH setup
 ### Keys
 1. Unix os (in client terminal)
  - Generate ssh key - 3x Enter
