@@ -7,7 +7,7 @@
   
   ```shell
   SET GLOBAL log_output = 'TABLE';
-  Execute SET GLOBAL general_log = 'ON';
+  SET GLOBAL general_log = 'ON';
   ```
   По умолчанию устанавливается таблица mysql.general_log
 - Для сохранения в файлы компьютера (сервера) установите 'FILE', она была установлена по умолчанию
