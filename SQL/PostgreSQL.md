@@ -116,7 +116,7 @@ listen_addresses='*'
 
 Редактирование конфигурации в файле pg_hba.conf
 ```bash
-vi /etc/postgresql/16/main/pg_hba.conf
+vi /etc/postgresql/*/main/pg_hba.conf
 ```
 125 строка
 ``` 
