@@ -20,6 +20,12 @@ sudo apt-get update
 ```bash
 sudo apt-get install postgresql postgresql-contrib -y
 ```
+
+При возникновении предупреждения: Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)) или The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 7FCC7D46ACCC4CF8.  Ввести команду:
+```bash
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7FCC7D46ACCC4CF8
+```
+
 ##
 По умолчанию служба Postgres не настроена на автоматический запуск после перезагрузки системы. Включить автоматический запуск службы 
 ```bash
