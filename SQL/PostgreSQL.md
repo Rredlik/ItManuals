@@ -2,7 +2,7 @@
 [Открыть доступ к TCP/IP](#удаленное-подключение-к-бд)
 
 
-# Установка PostgreSQL 16
+# Установка PostgreSQL 17
 Отметим пользовательские хранилища, поскольку туда обычно в первую очередь выгружают самые свежие версии.
 ```bash
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
@@ -187,6 +187,7 @@ vi /usr/share/phppgadmin/classes/database/Connection.php
 // Detect version and choose appropriate database driver
         switch (substr($version,0,2)) {
             case '16': return 'Postgres';break;
+            case '16': return 'Postgres16';break;
             case '15': return 'Postgres15';break;
             case '14': return 'Postgres14';break;
             case '13': return 'Postgres13';break;
