@@ -2,7 +2,7 @@
 [Открыть доступ к TCP/IP](#удаленное-подключение-к-бд)
 
 
-# Установка PostgreSQL
+# Установка PostgreSQL 16
 Отметим пользовательские хранилища, поскольку туда обычно в первую очередь выгружают самые свежие версии.
 ```bash
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
