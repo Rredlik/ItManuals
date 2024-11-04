@@ -186,7 +186,7 @@ vi /usr/share/phppgadmin/classes/database/Connection.php
 ``` 
 // Detect version and choose appropriate database driver
         switch (substr($version,0,2)) {
-            case '16': return 'Postgres';break;
+            case '17': return 'Postgres';break;
             case '16': return 'Postgres16';break;
             case '15': return 'Postgres15';break;
             case '14': return 'Postgres14';break;
