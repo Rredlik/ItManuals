@@ -62,7 +62,7 @@ psql
 ## Создание пользователя и базы данных
 Находясь в консоли под управлением профиля postgres
 ```bash
-createuser --interactive
+createuser -P --interactive
 ```
 Изменить пароль созданного пользователя
 ```bash
