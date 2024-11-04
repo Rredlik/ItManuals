@@ -103,7 +103,7 @@ DELETE FROM users WHERE user_name = 'slide';
 ## Удаленное подключение к БД
 В файле postgresql.conf 
 ```bash
-vi /etc/postgresql/16/main/postgresql.conf
+vi /etc/postgresql/*/main/postgresql.conf
 ```
 На строке 60 раскомментировать и заменить:
 ```
