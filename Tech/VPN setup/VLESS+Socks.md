@@ -18,6 +18,9 @@ bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release
 ```
 systemctl stop xray.service
 ./usr/local/bin/xray uuid
+openssl rand -base64 16
+./usr/local/bin/xray x25519
+openssl rand -hex 8
 ```
 ^^ ключи стоит записать, они нигде не сохранятся в виде файла.
 ```shell
