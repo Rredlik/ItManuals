@@ -14,6 +14,8 @@
 ```shell
 apt install curl mc htop nano
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install
+```
+```
 systemctl stop xray.service
 ./usr/local/bin/xray uuid
 ```
