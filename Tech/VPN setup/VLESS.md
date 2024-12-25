@@ -2,10 +2,34 @@
 
 Итак, вы купили VPS у хостера и вам пришли логин и пароль от него. Что я советую сделать сразу после установки:
 
-- Сменить пароль пользователя root с изначального на ваш уникальный. Не использовать учетную запись root, а создать непривелигированного пользователя командой adduser и назначить ей сложный пароль командой passwd <username>. Когда вы убедитесь, что она работает, стоит запретить вход для root‑юзера по SSH, выставив (раскомментировав) в «no» или «prohibit‑password» опцию PermitRootLogin в файле /etc/ssh/sshd_config
+- Сменить пароль пользователя root с изначального на ваш уникальный.
   ```
-  sudo adduser --shell /usr/sbin/nologin --no-create-home xrayuser
+  passwd root
   ```
+  Не использовать учетную запись root, а создать непривелигированного пользователя командой adduser и назначить ей сложный пароль командой passwd <username>.
+  ```
+  adduser <username>
+  ```
+  ```
+  sudo adduser rredlik sudo
+  ```
+  > Чтобы отключить необходимость ввода пароля для команд sudo, необходимо изменить файл:
+  > ```
+  > sudo gedit /etc/sudoers
+  > ```
+  > Найти в нем строку includedir /etc/sudoers.d и под ней написать
+  > ```
+  > username ALL=(ALL) NOPASSWD:ALL
+  > ```
+  Когда вы убедитесь, что новая учетка работает, стоит запретить вход для root‑юзера по SSH, выставив (раскомментировав) в «no» или «prohibit‑password» опцию PermitRootLogin в файле /etc/ssh/sshd_config
+  ```
+  nano /etc/ssh/sshd_config
+  ```
+  После изменения необходимо перезапустить службу sshd:
+  ```
+  systemctl restart sshd
+  ```
+
 
 - Перевесить SSH со стандартного порта 22 на нестандартный порт (например, на 54 321, 41 467, выберите любой рандомный выше 1000). Это особенно важно для маскировки XTLS‑Reality. Порт задается опцией «Port» в том же /etc/ssh/sshd_config (но если у вас Ubuntu 22.10 и новее, то там все сложнее)
   ```
@@ -40,11 +64,11 @@
   ```
   
 
--Обновите версии пакетов в системе на свежие, в Debian и Ubuntu это делается командами apt update и apt upgrade.
-```
-apt update
-apt upgrade
-```
+- Обновите версии пакетов в системе на свежие, в Debian и Ubuntu это делается командами apt update и apt upgrade.
+  ```
+  apt update
+  apt upgrade
+  ```
 
 ## Устанавливаем XRay на сервере
 Разработчики XRay разработали скрипт, который автоматически загружает XRay для вашей операционной системы и создает systemd‑юнит для его запуска: [ссылка на скрипт](https://github.com/XTLS/Xray-install). 
@@ -66,6 +90,10 @@ mkdir /opt/xray
 unzip ./Xray-linux-64.zip -d /opt/xray
 chmod +x /opt/xray/xray
 ```
+Создадим системного пользователя от которого будет запускаться юнит
+```
+sudo adduser --shell /usr/sbin/nologin --no-create-home xrayuser
+```
 Затем создаем systemd-юнит (nano /usr/lib/systemd/system/xray.service) и вставляем в него следующий текст
 ```
 [Unit]
@@ -80,6 +108,7 @@ ExecStart=/opt/xray/xray run -c /opt/xray/config.json
 WantedBy=multi-user.target
 ```
 или
+
 ```
 [Unit]
 Description=Xray Service
