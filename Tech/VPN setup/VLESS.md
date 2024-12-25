@@ -109,85 +109,86 @@ nano /opt/xray/config.json
 Пример конфига:
 ```
 {
-  "log": {
-    "loglevel": "info"
-  },
-  "routing": {
-    "rules": [
-      {
-        "type": "field",
-        "protocol": "bittorrent",
-        "outboundTag": "block"
-      }
-    ],
-    "domainStrategy": "IPIfNonMatch"
-  },
-  "inbounds": [
-    {
-      "listen": "IP_адрес_вашего_сервера",
-      "port": 443,
-      "protocol": "vless",
-      "tag": "reality-in",
-      "settings": {
-        "clients": [
-          {
-            "id": "сюда вставить ID из выхлопа ./usr/local/bin/xray uuid",
-            "email": "user@server",
-            "flow": "xtls-rprx-vision"
-          }
-        ],
-        "decryption": "none"
-      }
-    },
-    {
-      "port": 42639,
-      "tag": "ss",
-      "protocol": "shadowsocks",
-      "settings": {
-        "method": "2022-blake3-aes-128-gcm",
-        "password": "сюда вставить выхлоп команды openssl rand -base64 16",
-        "network": "tcp,udp"
-      }
-    },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-    "realitySettings": {
-      "show": false,
-      "dest": "ваш_маскировочный_домен:443", ## (www.microsoft.com:443)
-      "xver": 0,
-      "serverNames": [
-        "ваш_маскировочный_домен" 
-      ],
-      "privateKey": "сюда вставить приватный ключ из выхлопа ./usr/local/bin/xray x25519",
-      "minClientVer": "",
-      "maxClientVer": "",
-      "maxTimeDiff": 0,
-      "shortIds": [
-        "сюда вставить выхлоп команды openssl rand -hex 8"
-      ]
-    }
-      },
-      "sniffing": {
-        "enabled": true,
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ]
-      }
-    }
-  ],
-  "outbounds": [
-    {
-      "protocol": "freedom",
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "tag": "block"
-    }
-  ]
+	"log": {
+		"loglevel": "info"
+	},
+	"routing": {
+		"rules": [
+			{
+				"type": "field",
+				"protocol": "bittorrent",
+				"outboundTag": "block"
+			}
+		],
+		"domainStrategy": "IPIfNonMatch"
+	},
+	"inbounds": [
+		{
+			"listen": "IP_адрес_вашего_сервера",
+			"port": 443,
+			"protocol": "vless",
+			"tag": "reality-in",
+			"settings": {
+				"clients": [
+					{
+						"id": "сюда вставить ID из выхлопа ./usr/local/bin/xray uuid",
+						"email": "user@server",
+						"flow": "xtls-rprx-vision"
+					}
+				],
+				"decryption": "none"
+			}
+		},
+		{
+			"port": 42639,
+			"tag": "ss",
+			"protocol": "shadowsocks",
+			"settings": {
+				"method": "2022-blake3-aes-128-gcm",
+				"password": "сюда вставить выхлоп команды openssl rand -base64 16",
+				"network": "tcp,udp"
+			}
+		},
+		{
+			"streamSettings": {
+				"network": "tcp",
+				"security": "reality",
+				"realitySettings": {
+					"show": false,
+					"dest": "ваш_маскировочный_домен:443",
+					"xver": 0,
+					"serverNames": [
+						"ваш_маскировочный_домен"
+					],
+					"privateKey": "сюда вставить приватный ключ из выхлопа ./usr/local/bin/xray x25519",
+					"minClientVer": "",
+					"maxClientVer": "",
+					"maxTimeDiff": 0,
+					"shortIds": [
+						"сюда вставить выхлоп команды openssl rand -hex 8"
+					]
+				}
+			},
+			"sniffing": {
+				"enabled": true,
+				"destOverride": [
+					"http",
+					"tls",
+					"quic"
+				]
+			}
+		}
+	],
+	"outbounds": [
+		{
+			"protocol": "freedom",
+			"tag": "direct"
+		},
+		{
+			"protocol": "blackhole",
+			"tag": "block"
+		}
+	]
 }
 ```
 Файл состоит из нескольких секций. Первая — log, определяет настройки логгирования (мы ставим уровень info). Вторая, «inbounds», определяет, какие протоколы и с какими параметрами будут исползоватся для входящих подключений на прокси. Третья, «outbounds», описывает, куда может пойти трафик с вашего прокси, там указаны «freedom» (выход в чистый интернет), «blackhole» (если надо не пускать пользователя куда‑то) и «dns» (встроенный dns‑сервер). Последний «routing» определяет дополнительные правила, что и куда мы будем перенаправлять, например, подключения по протоколу Bittorrent блокируем, отправляя в blackhole, чтобы ваши пользователи не создали вам проблем, раздавая гигабайты через ваш сервер (если не надо можете удалить эти строки из конфига). Все остальное отправляется в свободный интернет (по умолчанию).
