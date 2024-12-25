@@ -82,7 +82,7 @@ openssl rand -hex 8
 
 После этого нужно подготовить конфиг‑файл. Итак, приводим (редактором nano или как вам удобнее) файл /opt/xray/config.json (или /usr/local/etc/xray/config.json если ставили скриптом) к следущему виду:
 ```shell
-nano /usr/local/etc/xray/config.json
+nano /opt/xray/config.json
 ```
 Пример конфига:
 ```
