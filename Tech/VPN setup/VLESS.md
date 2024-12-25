@@ -206,3 +206,11 @@ vless://ваш_UUID@IP_адрес_вашего_сервера:443/?encryption=no
 
  ## Клиенты
 Самый красивый и простой в настройке: Hiddify‑Next. Работает под Windows, Linux, macOS, под Android, в разработке версия под iOS. Скачать бинарник под вашу десктопную систему или.apk‑файл для Android можно на [странице проекта](https://github.com/hiddify/hiddify-app/releases).
+
+
+## Дополнительно
+
+Меняем timezone:
+```
+timedatectl set-timezone Europe/Amsterdam
+```
