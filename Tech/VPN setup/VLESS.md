@@ -101,20 +101,6 @@ sudo adduser --shell /usr/sbin/nologin --no-create-home xrayuser
 Затем создаем systemd-юнит (nano /usr/lib/systemd/system/xray.service) и вставляем в него следующий текст
 ```
 [Unit]
-Description=XRay
-[Service]
-Type=simple
-Restart=on-failure
-RestartSec=30
-WorkingDirectory=/opt/xray
-ExecStart=/opt/xray/xray run -c /opt/xray/config.json
-[Install]
-WantedBy=multi-user.target
-```
-или
-
-```
-[Unit]
 Description=Xray Service
 Documentation=https://github.com/xtls
 After=network.target nss-lookup.target
@@ -130,6 +116,19 @@ RestartPreventExitStatus=23
 LimitNPROC=10000
 LimitNOFILE=1000000
 
+[Install]
+WantedBy=multi-user.target
+```
+или
+```
+[Unit]
+Description=XRay
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=30
+WorkingDirectory=/opt/xray
+ExecStart=/opt/xray/xray run -c /opt/xray/config.json
 [Install]
 WantedBy=multi-user.target
 ```
