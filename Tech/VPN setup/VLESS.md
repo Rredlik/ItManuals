@@ -3,8 +3,19 @@
 Итак, вы купили VPS у хостера и вам пришли логин и пароль от него. Что я советую сделать сразу после установки:
 
 - Сменить пароль пользователя root с изначального на ваш уникальный. Не использовать учетную запись root, а создать непривелигированного пользователя командой adduser и назначить ей сложный пароль командой passwd <username>. Когда вы убедитесь, что она работает, стоит запретить вход для root‑юзера по SSH, выставив (раскомментировав) в «no» или «prohibit‑password» опцию PermitRootLogin в файле /etc/ssh/sshd_config
+  ```
+  sudo adduser --shell /usr/sbin/nologin --no-create-home xrayuser
+  ```
 
 - Перевесить SSH со стандартного порта 22 на нестандартный порт (например, на 54 321, 41 467, выберите любой рандомный выше 1000). Это особенно важно для маскировки XTLS‑Reality. Порт задается опцией «Port» в том же /etc/ssh/sshd_config (но если у вас Ubuntu 22.10 и новее, то там все сложнее)
+  ```
+  apt install net-tools
+  netstat -tulpan | grep 22
+  ```
+  Видим, что порт 22 занят. Проверим 2233:
+  ```
+    netstat -tulpan | grep 2233
+  ```
 
 -Обновите версии пакетов в системе на свежие, в Debian и Ubuntu это делается командами apt update и apt upgrade.
 
@@ -49,7 +60,7 @@ Documentation=https://github.com/xtls
 After=network.target nss-lookup.target
 
 [Service]
-User=nobody
+User=xrayuser
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
