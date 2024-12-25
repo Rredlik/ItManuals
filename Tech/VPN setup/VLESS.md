@@ -14,7 +14,7 @@
   ```
   Видим, что порт 22 занят. Проверим 2233:
   ```
-    netstat -tulpan | grep 2233
+  netstat -tulpan | grep 2233
   ```
 
 -Обновите версии пакетов в системе на свежие, в Debian и Ubuntu это делается командами apt update и apt upgrade.
