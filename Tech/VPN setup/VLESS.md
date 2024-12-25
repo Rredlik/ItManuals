@@ -90,7 +90,11 @@ mkdir /opt/xray
 unzip ./Xray-linux-64.zip -d /opt/xray
 chmod +x /opt/xray/xray
 ```
-Создадим системного пользователя от которого будет запускаться юнит
+Это позволит процессу открывать сокеты на привилегированных портах в частности (443) без необходимости запуска всего процесса от имени (root):
+```
+setcap cap_net_bind_service=+ep /opt/xray/xray
+```
+Создаёт нового пользователя «xrayuser» без домашнего каталога и доступа к оболочке (bash), от которого будет запускаться юнит
 ```
 sudo adduser --shell /usr/sbin/nologin --no-create-home xrayuser
 ```
