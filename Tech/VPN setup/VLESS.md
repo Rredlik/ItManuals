@@ -11,7 +11,7 @@
   adduser <username>
   ```
   ```
-  sudo adduser rredlik sudo
+  sudo adduser <username> sudo
   ```
   > Чтобы отключить необходимость ввода пароля для команд sudo, необходимо изменить файл:
   > ```
