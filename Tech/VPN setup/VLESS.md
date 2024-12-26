@@ -15,7 +15,7 @@
   ```
   > Чтобы отключить необходимость ввода пароля для команд sudo, необходимо изменить файл:
   > ```
-  > sudo gedit /etc/sudoers
+  > sudo nano /etc/sudoers
   > ```
   > Найти в нем строку includedir /etc/sudoers.d и под ней написать
   > ```
