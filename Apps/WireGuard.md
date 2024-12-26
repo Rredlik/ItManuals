@@ -7,7 +7,6 @@ docker pull ghcr.io/wg-easy/wg-easy
 
 docker run -d \
   --name wg-easy \
-  --env LANG=de \
   --env WG_HOST=<🚨YOUR_SERVER_IP> \
   --env PORT=51821 \
   --env WG_PORT=51820 \
