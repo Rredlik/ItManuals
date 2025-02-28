@@ -24,4 +24,4 @@
     sudo apt-get autoremove
     ```
 7. [Docker setup](../../../Tech/Docker/README.md)
-8. [Ssh setup](Ssh.md)
+8. [Ssh setup](ssh.md)
