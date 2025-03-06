@@ -3,7 +3,7 @@
 
 - [Apps](Apps/README.md)
 - [Lang](Langs)
-- [Git](Tech/Git)
+- [Git](Tech/Git/commands.md)
 - [Os](Os)
 - [Docker](Tech/Docker)
 
