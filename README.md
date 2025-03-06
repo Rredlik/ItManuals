@@ -9,3 +9,5 @@
 
 
 - [SSH](Os/Linux/Debian/ssh.md)
+
+-[Удобная и быстрая настройка для Python](Langs/Python/base.md)
