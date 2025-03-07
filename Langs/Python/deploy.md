@@ -24,7 +24,7 @@ sudo nano /etc/supervisor/conf.d/TgBot.conf
 ```bash
 [program:TgBot]
 directory=/root/TelegramBot/TgBot
-command=/bin/bash -c "source my_env/bin/activate && python3 run.py"
+command=/bin/bash -c "source my_venv/bin/activate && python3 run.py"
 
 autostart=true
 autorestart=true
