@@ -1,6 +1,7 @@
 Перед тем как устанавливать python необходимо настроить сервер
 - [Настройка сервера](../../Os/Linux/Ubuntu)
 - [Настройка git](../../Tech/Git/commands.md)
+- [Настройка PostgreSQL](../../SQL/PostgreSQL.md)
   
 # Установка Python 3
 
