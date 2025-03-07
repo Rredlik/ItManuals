@@ -18,7 +18,7 @@ sudo systemctl status supervisor
 
 Теперь для этого процесса можно создать конфигурационный файл supervisor. Лучше для каждой программы создавать отдельный конфигурационный файл в каталоге /etc/supervisor/conf.d/ с именем *.conf. 
 ```bash
-sudo vi /etc/supervisor/conf.d/TgBot.conf
+sudo nano /etc/supervisor/conf.d/TgBot.conf
 ```
 Например, для этой программы этот файл будет выглядеть вот так:
 ```bash
