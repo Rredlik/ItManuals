@@ -103,7 +103,7 @@ DELETE FROM users WHERE user_name = 'slide';
 ## Удаленное подключение к БД
 В файле postgresql.conf 
 ```bash
-vi /etc/postgresql/*/main/postgresql.conf
+nano /etc/postgresql/*/main/postgresql.conf
 ```
 На строке 60 раскомментировать и заменить:
 ```
@@ -116,7 +116,7 @@ listen_addresses='*'
 
 Редактирование конфигурации в файле pg_hba.conf
 ```bash
-vi /etc/postgresql/*/main/pg_hba.conf
+nano /etc/postgresql/*/main/pg_hba.conf
 ```
 125 строка
 ``` 
