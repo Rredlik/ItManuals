@@ -5,7 +5,7 @@
   
 # Установка Python 3
 
-[Сайт]([../../../Tech/Docker/README.md](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-an-ubuntu-20-04-server-ru#1-python-3)) на котором уже все расписано подробно
+[Сайт](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-an-ubuntu-20-04-server-ru#1-python-3) на котором уже все расписано подробно
 ```bash
 python3 -V
 ```
