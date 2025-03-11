@@ -84,8 +84,22 @@ find /home/rredlik/TgBot_VideoHelper/media_files -type d -exec chmod 777 {} +
 umount /home/rredlik/TgBot_VideoHelper/media_files
 ```
 
+
+Но при перезагрузке сервера, монтирование отвалится. Чтобы этого не происходило, добавим в /etc/fstab
+```
+/home/rredlik/TgBot_VideoHelper/media_files/ /home/videohelper/media_files/chroot none bind 0 0
+```
+
+
+Если понадобится дать такой же доступ ещё одному пользователю.
+
+adduser seconduser -g1000 -o -u1000 -d /home/videohelper/
+passwd seconduser
+usermod -aG videohelper seconduser
+
 Источники:
 - https://selectel.ru/blog/protocol-sftp/
 - https://qna.habr.com/q/601686
 - http://trofimovdigital.ru/blog/how-add-sftp-user-to-bitrixvm
+- https://wiki.archlinux.org/title/SFTP_chroot
 
