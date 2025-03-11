@@ -1,52 +1,42 @@
-Как открыть доступ по SFTP к определенной папке и заблокировать ко всем остальным
+# Открытие доступа по SFTP к определенной папке и заблокировать ко всем остальным
+
+#### Создаем пользователя
 ```
 sudo adduser videohelper
 ```
 
 ```
-adduser devuser -g 1000 -o -u 1000 -d /home/videohelper/ -s /sbin/nologin
+adduser -g1000 -o -u1000 -d /home/videohelper/ -s /sbin/nologin videohelper
 ```
 
-```
-sudo mkdir -p /var/sftp/userfolder
-```
+Число 1000 — это id пользователя bitrix, чтобы создаваемые файлы были с нужными правами. Параметр -o позволяет назначить id существующего пользователя другому пользователю. id можно узнать командой:  id -u rredlik
 
 ```
-sudo chown root:root /var/sftp
+chown videohelper:videohelper /home/videohelper
+chmod 755 /home/videohelper/
 ```
 
-```
-sudo chmod 755 /var/sftp
-```
 
-```
-sudo chown videohelper:videohelper /var/sftp/userfolder
-```
+#### Добавление sshd настроек для группы нового пользователя
 
 ```
 sudo nano /etc/ssh/sshd_config
 ```
+
 Записать в файл:
 ```
-Match User videohelper
-ForceCommand internal-sftp
-PasswordAuthentication yes
-ChrootDirectory /var/sftp
-PermitTunnel no
-AllowAgentForwarding no
-AllowTcpForwarding no
-X11Forwarding no
-```
+Match Group videohelper
+    ForceCommand internal-sftp
+    PasswordAuthentication yes
+    ChrootDirectory /home/videohelper
+    PermitTunnel no
+    AllowAgentForwarding no
+    AllowTcpForwarding no
+    X11Forwarding no
 
-```
-sudo systemctl restart ssh
-```
-
-Теперь отправляемся в конфиг SSH - 
-```
-nano /etc/ssh/sshd_config
 ```
 Ищем следующую строчку:
+
 ```
 Subsystem sftp /usr/lib/openssh/sftp-server
 ```
@@ -55,9 +45,16 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 Subsystem sftp internal-sftp
 ```
 
-Настройка директорий для пользователя SFTP
-Отправляемся в директорию /home и там ищем папку свежесозданного пользователя, а в ней папку chroot. Устанавливаем её владельцем пользователя root:
+Перезапускаем
 ```
+sudo systemctl restart ssh
+```
+
+#### Настройка директорий для пользователя SFTP
+
+Отправляемся в директорию /home и там ищем папку свеже-созданного пользователя, а в ней папку chroot. Устанавливаем её владельцем пользователя root:
+```
+mkdir /home/videohelper/chroot
 chown root:root /home/videohelper/chroot
 ```
 Устанавливаем нужные права на папку:
@@ -84,18 +81,20 @@ find /home/rredlik/TgBot_VideoHelper/media_files -type d -exec chmod 777 {} +
 umount /home/rredlik/TgBot_VideoHelper/media_files
 ```
 
+#### Добавление монтирования при перезапуске сервера
 
 Но при перезагрузке сервера, монтирование отвалится. Чтобы этого не происходило, добавим в /etc/fstab
 ```
-/home/rredlik/TgBot_VideoHelper/media_files/ /home/videohelper/media_files/chroot none bind 0 0
+/home/rredlik/TgBot_VideoHelper/media_files /home/videohelper/media_files none bind 0 0
 ```
-
 
 Если понадобится дать такой же доступ ещё одному пользователю.
 
+```
 adduser seconduser -g1000 -o -u1000 -d /home/videohelper/
 passwd seconduser
 usermod -aG videohelper seconduser
+```
 
 Источники:
 - https://selectel.ru/blog/protocol-sftp/
