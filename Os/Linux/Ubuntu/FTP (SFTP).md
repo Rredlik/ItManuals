@@ -86,6 +86,8 @@ umount /home/rredlik/TgBot_VideoHelper/media_files
 
 Источники:
 https://selectel.ru/blog/protocol-sftp/
+
 https://qna.habr.com/q/601686
+
 http://trofimovdigital.ru/blog/how-add-sftp-user-to-bitrixvm
 
