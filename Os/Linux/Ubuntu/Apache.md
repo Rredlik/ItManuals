@@ -1,4 +1,4 @@
-
+https://kupereal.com/kb/web-server-ubuntu.html#-apache
 Устанавливаем пакет
 ```
 sudo apt update

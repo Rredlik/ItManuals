@@ -45,9 +45,15 @@ WantedBy=sockets.target
 ```
 
 ```
+systemctl restart gunicorn.socket
+systemctl status gunicorn.socket
+```
+
+```
 sudo nano /etc/systemd/system/gunicorn.service
 ```
 
+webhook:app - это файл, который должен находиться в директории указанной в WorkingDirectory (в моем случае это webhook.py, в котором указан код для обработки вебхуков)
 ```
 [Unit]
 Description=gunicorn daemon
@@ -58,10 +64,15 @@ After=network.target
 User=rredlik
 Group=www-data
 WorkingDirectory=/home/rredlik/TgBot_VideoHelper
-ExecStart=/home/rredlik/TgBot_VideoHelper/my_venv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/run/gunicorn.sock webhook:app
+ExecStart=/home/rredlik/TgBot_VideoHelper/my_venv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/run/gunicorn.sock webhook:app 
 
 [Install]
 WantedBy=multi-user.target
+```
+
+```
+systemctl restart gunicorn.service
+systemctl status gunicorn.service
 ```
 
 ```
@@ -70,4 +81,9 @@ systemctl restart gunicorn
 systemctl enable gunicorn
 
 systemctl status gunicorn
+```
+
+Если есть какие-то ошибки, можно посмотреть подробности:
+```
+sudo journalctl -u gunicorn.service -b
 ```
