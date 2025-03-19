@@ -13,7 +13,7 @@ sudo systemctl enable supervisor --now
 ```bash
 sudo systemctl status supervisor
 ```
-# Пример испольлзования
+# Пример использования
 Путь до выполняемого скрипта /root/TelegramBot/TgBot/run.py
 
 Теперь для этого процесса можно создать конфигурационный файл supervisor. Лучше для каждой программы создавать отдельный конфигурационный файл в каталоге /etc/supervisor/conf.d/ с именем *.conf. 

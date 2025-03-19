@@ -2,21 +2,20 @@
 
 #### Создаем пользователя
 ```
-sudo adduser videohelper
+useradd -s /sbin/nologin videohelper -g 1000
 ```
 
-```
-adduser -g1000 -o -u1000 -d /home/videohelper/ -s /sbin/nologin videohelper
-```
-
-Число 1000 — это id пользователя bitrix, чтобы создаваемые файлы были с нужными правами. Параметр -o позволяет назначить id существующего пользователя другому пользователю. id можно узнать командой:  id -u rredlik
+Число 1000 — это id пользователя rredlik, чтобы создаваемые файлы были с нужными правами. Параметр -g позволяет назначить id существующего пользователя другому пользователю. id можно узнать командой:  id -u rredlik
 
 ```
 chown videohelper:videohelper /home/videohelper
 chmod 755 /home/videohelper/
 ```
 
-
+Устанавливаем пароль
+```
+passwd videohelper
+```
 #### Добавление sshd настроек для группы нового пользователя
 
 ```
@@ -66,6 +65,7 @@ chmod 755 /home/videohelper
 mkdir /home/videohelper/media_files
 ```
 
+В первом пути указываем папку, которая должна быть доступна новому пользователю
 ```
 mount --bind /home/rredlik/TgBot_VideoHelper/media_files /home/videohelper/media_files
 ```
@@ -83,7 +83,11 @@ umount /home/rredlik/TgBot_VideoHelper/media_files
 
 #### Добавление монтирования при перезапуске сервера
 
-Но при перезагрузке сервера, монтирование отвалится. Чтобы этого не происходило, добавим в /etc/fstab
+Но при перезагрузке сервера, монтирование отвалится. Чтобы этого не происходило, добавим в nano /etc/fstab
+```
+nano /etc/fstab
+```
+
 ```
 /home/rredlik/TgBot_VideoHelper/media_files /home/videohelper/media_files none bind 0 0
 ```
