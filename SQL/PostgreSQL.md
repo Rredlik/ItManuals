@@ -40,6 +40,9 @@ sudo systemctl status postgresql.service
 sudo systemctl start postgresql.service
 ```
 
+```bash
+sudo systemctl start postgresql.service
+```
 
 
 ## Первый запуск PostgreSQL

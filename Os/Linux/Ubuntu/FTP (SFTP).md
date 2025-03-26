@@ -81,6 +81,11 @@ find /home/rredlik/TgBot_VideoHelper/media_files -type d -exec chmod 777 {} +
 umount /home/rredlik/TgBot_VideoHelper/media_files
 ```
 
+Если не получается взаимно управлять файлами
+
+```
+chmod g+rwxs media_files
+```
 #### Добавление монтирования при перезапуске сервера
 
 Но при перезагрузке сервера, монтирование отвалится. Чтобы этого не происходило, добавим в nano /etc/fstab

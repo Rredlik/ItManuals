@@ -60,6 +60,9 @@ python3 -V
 Пакеты Python можно установить с помощью pip:
 ```bash
 sudo apt install -y python3-pip
+```
+
+```
 pip3 install package_name
 ```
 

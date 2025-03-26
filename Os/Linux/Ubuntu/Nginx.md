@@ -7,6 +7,7 @@ sudo apt install nginx
 sudo nano /etc/nginx/sites-available/myapp
 ```
 
+В SERVER IP необходимо указать ip вашего сервера
 ```
 server {
     listen 80;
