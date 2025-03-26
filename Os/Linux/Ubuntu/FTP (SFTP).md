@@ -110,4 +110,5 @@ usermod -aG videohelper seconduser
 - https://qna.habr.com/q/601686
 - http://trofimovdigital.ru/blog/how-add-sftp-user-to-bitrixvm
 - https://wiki.archlinux.org/title/SFTP_chroot
+- https://docs.vultr.com/setup-sftp-user-accounts-on-ubuntu-20-04 - это хороший для создания пользователя
 
