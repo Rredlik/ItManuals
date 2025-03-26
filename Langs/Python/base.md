@@ -2,7 +2,55 @@
 - [Настройка сервера](../../Os/Linux/Ubuntu)
 - [Настройка git](../../Tech/Git/commands.md)
 - [Настройка PostgreSQL](../../SQL/PostgreSQL.md)
-  
+
+
+# Установка Python 3.12
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+**Установка необходимых зависимостей**
+
+Для корректной работы Python 3.12 требуется установка некоторых зависимостей, таких как software-properties-common, которые облегчают управление репозиториями. Выполните следующую команду:
+
+```bash
+sudo apt install -y software-properties-common
+```
+
+Run the following command to import the stable PPA for Python 3.12:
+
+```bash
+sudo add-apt-repository ppa:deadsnakes/ppa -y
+sudo apt update
+```
+
+```bash
+sudo apt install python3.12 -y
+```
+Чтобы убедиться, что Python 3.12 установлен правильно, выполните команду:
+
+```bash
+python3.12 --version
+```
+
+**Установка pip для Python 3.12**
+**pip** – это пакетный менеджер для Python, используемый для установки и управления библиотеками. Чтобы установить **pip** для **Python 3.12**, выполните следующие команды:
+
+```bash
+sudo apt install -y python3.12-distutils
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python3.12 get-pip.py
+```
+
+```bash
+sudo apt install -y python3.12-venv
+```
+
+Затем создайте новое виртуальное окружение:
+
+```bash
+python3.12 -m venv my_venv
 # Установка Python 3
 
 [Сайт](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-an-ubuntu-20-04-server-ru#1-python-3) на котором уже все расписано подробно
