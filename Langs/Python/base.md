@@ -51,6 +51,7 @@ sudo apt install -y python3.12-venv
 
 ```bash
 python3.12 -m venv my_venv
+```
 # Установка Python 3
 
 [Сайт](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-an-ubuntu-20-04-server-ru#1-python-3) на котором уже все расписано подробно
