@@ -41,7 +41,7 @@ sudo systemctl start postgresql.service
 ```
 
 ```bash
-sudo systemctl start postgresql.service
+sudo systemctl restart postgresql.service
 ```
 
 
