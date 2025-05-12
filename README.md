@@ -2,7 +2,6 @@
  IT manuals
 
 * [Удобная и быстрая настройка для Python](Langs/Python/README.md)
-  
   - [Настройка сервера](Os/Linux/Ubuntu)
   - [Настройка git](Tech/Git/commands.md)
   - [Настройка PostgreSQL](SQL/PostgreSQL.md)
