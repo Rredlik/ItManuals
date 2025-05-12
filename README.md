@@ -10,6 +10,7 @@
 *[Настройка Linux Ubuntu](Os/Linux/Ubuntu/README.md)
   - [Настройка ssh](Os/Linux/Ubuntu/ssh.md)
   - [Настройка FTP](Os/Linux/Ubuntu/FTP_SFTP.md)
+    
 * [Apps](Apps/README.md)
 * [Lang](Langs)
 * [Git](Tech/Git/commands.md)
