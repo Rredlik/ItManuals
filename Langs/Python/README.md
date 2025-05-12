@@ -2,6 +2,7 @@
 - [Настройка сервера](../../Os/Linux/Ubuntu)
 - [Настройка git](../../Tech/Git/commands.md)
 - [Настройка PostgreSQL](../../SQL/PostgreSQL.md)
+- [Запуск скрипта без блокировки консоли](./deploy.md)
 
 
 # Установка Python 3.12
