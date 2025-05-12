@@ -3,10 +3,10 @@
 
 * [Удобная и быстрая настройка для Python](Langs/Python/README.md)
   
-- [Настройка сервера](Os/Linux/Ubuntu)
-- [Настройка git](Tech/Git/commands.md)
-- [Настройка PostgreSQL](SQL/PostgreSQL.md)
-- [Запуск скрипта без блокировки консоли](Langs/Python/deploy.md)
+  - [Настройка сервера](Os/Linux/Ubuntu)
+  - [Настройка git](Tech/Git/commands.md)
+  - [Настройка PostgreSQL](SQL/PostgreSQL.md)
+  - [Запуск скрипта без блокировки консоли](Langs/Python/deploy.md)
   
 * [Apps](Apps/README.md)
 * [Lang](Langs)
