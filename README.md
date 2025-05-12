@@ -1,7 +1,7 @@
 # ItManuals
  IT manuals
 
-- [Удобная и быстрая настройка для Python](Langs/Python/base.md)
+- [Удобная и быстрая настройка для Python](Langs/Python/README.md)
 - [Apps](Apps/README.md)
 - [Lang](Langs)
 - [Git](Tech/Git/commands.md)
