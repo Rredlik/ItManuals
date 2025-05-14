@@ -25,6 +25,12 @@ sudo apt-get install postgresql postgresql-contrib -y
 ```bash
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7FCC7D46ACCC4CF8
 ```
+При предупреждении: W: http://packages.osrfoundation.org/gazebo/ubuntu-stable/dists/jammy/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+```bash
+cd /etc/apt
+sudo cp trusted.gpg trusted.gpg.d
+sudo apt update
+```
 
 ##
 По умолчанию служба Postgres не настроена на автоматический запуск после перезагрузки системы. Включить автоматический запуск службы 
