@@ -16,9 +16,4 @@
 * [Git](Tech/Git/commands.md)
 * [Os](Os)
 * [Docker](Tech/Docker)
-
-
 * [SSH](Os/Linux/Debian/ssh.md)
-
-
-![](https://komarev.com/ghpvc/?username=Rredlik/ItManuals&color=blueviolet&style=plastic&label=PROFILE+VIEWS)<br>
