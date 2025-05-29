@@ -18,6 +18,9 @@
 
 - [SSH](Os/Linux/Debian/ssh.md)
 - [Docker](Os/Tech/Docker/README.md)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 * [Настройка Linux Ubuntu](Os/Linux/Ubuntu/README.md)
