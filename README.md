@@ -12,11 +12,8 @@
   - [Настройка ssh](Os/Linux/Ubuntu/ssh.md)
   - [Настройка FTP](Os/Linux/Ubuntu/FTP_SFTP.md)
 
-- [Apps](Apps.md)
-- [Lang](Langs)
+
 - [Git](Tech/Git/commands.md)
-- [Os](Os)
-- [Docker](Tech/Docker)
 - [SSH](Os/Linux/Debian/ssh.md)
 
   
