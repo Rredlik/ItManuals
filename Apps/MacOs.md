@@ -6,4 +6,4 @@
   - [Iterm2](https://github.com/gnachman/iTerm2)
   - [Karabiner](https://github.com/pqrs-org/Karabiner-Elements)
 --------
-### [BACK](README.md)
+### [BACK](Apps.md)
