@@ -1,7 +1,7 @@
 # ItManuals
  IT manuals
 
-<<<<<<< Updated upstream
+
 * [Удобная и быстрая настройка для Python](Langs/Python/README.md)
   - [Настройка сервера](Os/Linux/Ubuntu)
   - [Настройка git](Tech/Git/commands.md)
@@ -17,7 +17,11 @@
 - [Git](Tech/Git/commands.md)
 - [Os](Os)
 - [Docker](Tech/Docker)
-
-
 - [SSH](Os/Linux/Debian/ssh.md)
-- [Tech](Os/Tech/Tech.md)
+
+  
+- [Tech](Tech/Tech.md)
+- [SQL](SQL/SQL.md)
+- [OS](OS/OS.md)
+- [Langs](Langs/Langs.md)
+- 
