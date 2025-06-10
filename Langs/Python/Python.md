@@ -95,3 +95,5 @@ source my_venv/bin/activate && python3 run.py
 Для выхода из среды введите команду deactivate (ctrl+C)
 
 [Запуск скрипта без блокировки консоли](./deploy.md)
+[Запуск сервера Telegram Bot API](Telegram-bot-api)
+[TgBotService](TgBotService)
