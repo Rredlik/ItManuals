@@ -22,10 +22,11 @@ sudo python3.12 get-pip.py
 sudo apt install -y python3.12-venv
 ```
 
-Затем создайте новое виртуальное окружение:
+Затем создайте новое виртуальное окружение и запустите его:
 
 ```bash
-python3.12 -m venv my_venv
+python3.12 -m venv venv
+source venv/bin/activate
 ```
 # Установка Python 3
 
