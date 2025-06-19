@@ -6,52 +6,27 @@
 
 
 # Установка Python 3.12
-
+  - Обновление пакетов
+  - Установка необходимых зависимостей. Для корректной работы Python 3.12 требуется установка некоторых зависимостей, таких как software-properties-common, которые облегчают управление репозиториями.
+  - Установка pip для Python 3.12. 
 ```bash
 sudo apt update && sudo apt upgrade -y
-```
-
-**Установка необходимых зависимостей**
-
-Для корректной работы Python 3.12 требуется установка некоторых зависимостей, таких как software-properties-common, которые облегчают управление репозиториями. Выполните следующую команду:
-
-```bash
 sudo apt install -y software-properties-common
-```
-
-Run the following command to import the stable PPA for Python 3.12:
-
-```bash
 sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt update
-```
-
-```bash
 sudo apt install python3.12 -y
-```
-Чтобы убедиться, что Python 3.12 установлен правильно, выполните команду:
-
-```bash
 python3.12 --version
-```
-
-**Установка pip для Python 3.12**
-**pip** – это пакетный менеджер для Python, используемый для установки и управления библиотеками. Чтобы установить **pip** для **Python 3.12**, выполните следующие команды:
-
-```bash
 sudo apt install -y python3.12-distutils
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python3.12 get-pip.py
-```
-
-```bash
 sudo apt install -y python3.12-venv
 ```
 
-Затем создайте новое виртуальное окружение:
+Затем создайте новое виртуальное окружение и запустите его:
 
 ```bash
-python3.12 -m venv my_venv
+python3.12 -m venv venv
+source venv/bin/activate
 ```
 # Установка Python 3
 
