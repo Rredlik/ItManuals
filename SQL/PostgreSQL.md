@@ -32,7 +32,8 @@ sudo cp trusted.gpg trusted.gpg.d
 sudo apt update
 ```
 
-##
+## Автоматический запуск службы
+
 По умолчанию служба Postgres не настроена на автоматический запуск после перезагрузки системы. Включить автоматический запуск службы 
 ```bash
 sudo systemctl enable postgresql.service
@@ -64,10 +65,32 @@ psql
 ```bash
 \conninfo
 ```
-Выйти из окружения
-```bash
-\q
+Показать все БД на сервере - `\l`
 ```
+postgres=# \l
+	  List of databases
+     Name      |     Owner     | Encoding | Collate |  Ctype  |   Access privileges
+---------------+---------------+----------+---------+---------+-----------------------
+ admindb       | admindb       | UTF8     | C.UTF-8 | C.UTF-8 |
+ aigrok        | aigrok        | UTF8     | C.UTF-8 | C.UTF-8 |
+ biliardnayadb | biliardnayadb | UTF8     | C.UTF-8 | C.UTF-8 |
+ billingdb     | billingdb     | UTF8     | C.UTF-8 | C.UTF-8 |
+ gptdb         | gptdb         | UTF8     | C.UTF-8 | C.UTF-8 | =Tc/gptdb            +
+               |               |          |         |         | gptdb=CTc/gptdb
+
+```
+
+#### Полезные команды для просмотра таблиц:
+1. `\?` list all the commands
+2. `\l` list databases
+3. `\conninfo` display information about current connection
+4. `\c [DBNAME]` connect to new database, e.g., `\c template1`
+5. `\dt` list tables of the public schema
+6. `\dt <schema-name>.*` list tables of certain schema, e.g., `\dt public.*`
+7. `\dt *.*` list tables of all schemas
+8. Then you can run SQL statements, e.g., `SELECT * FROM my_table;`(Note: a statement must be terminated with semicolon `;`)
+9. `\q` quit psql
+
 ## Создание пользователя и базы данных
 Находясь в консоли под управлением профиля postgres
 ```bash
@@ -130,12 +153,12 @@ nano /etc/postgresql/*/main/pg_hba.conf
 125 строка
 ``` 
 IPv4 local connections:
-host    all             all             127.0.0.1/32            md5
+host    all    all    127.0.0.1/32    md5
 ```
-заменить на
+заменить на (TODO: надо разобраться в параметрах, что лучше указывать для повышения безопасности)
 ``` 
 IPv4 local connections:
-host    all             all             all                     md5
+host    {project_name}    {project_name}    0.0.0.0/0    md5
 ```
 Перезапуск службы:
 ```bash
