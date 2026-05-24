@@ -82,7 +82,7 @@ adduser your-username && usermod -aG sudo your-username
 ```
 1. Update packages
 ```bash
-sudo apt-get update & sudo apt-get upgrade
+sudo apt update && sudo apt upgrade -y
 ```
 1. Install packages
 ```bash
